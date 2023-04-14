@@ -1,3 +1,7 @@
+.container{
+  width: 66%;
+  margin: auto;
+}
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -31,11 +35,6 @@ button {
 
 button:hover {
   opacity:1;
-}
-
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
 }
 
 .cancelbtn, .signupbtn {
