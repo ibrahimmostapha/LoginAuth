@@ -8,6 +8,7 @@ const userRoute = require('./routes/UserRoute');
 const app = express()//creates an express app
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 const PORT = 3001;
 
 //connect database
