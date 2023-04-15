@@ -1,18 +1,14 @@
 const express = require('express');
 const mongoose = require("mongoose");
-// const authRoute = require('./routes/AuthRoute');
-// const userRoute = require('./routes/UserRoute');
-
 const dotenv = require("dotenv");
-
 const cors = require('cors');
-
+const authRoute = require('./routes/AuthRoute');
+const userRoute = require('./routes/UserRoute');
 
 const app = express()//creates an express app
-
-const PORT = 3000;
 dotenv.config();
 app.use(express.json());
+const PORT = 3001;
 
 //connect database
 mongoose.set('strictQuery', true),
@@ -27,3 +23,9 @@ app.get('/', (req, res) => {
 
 //server runing and port
 app.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
+
+//user auth
+app.use("/auth", authRoute);
+
+//user routes
+app.use("/users", userRoute);
